@@ -1,5 +1,7 @@
 import { projects } from "../constants/links";
 import "../../App.css";
+import Button from "../components/Button";
+import ProjectCard from "../components/ProjectCard";
 
 const Works = () => {
   return (
@@ -13,20 +15,15 @@ const Works = () => {
           functional, professional-grade solutions.
         </p>
       </div>
-      <div className="flex gap-12 flex-col">
+      <div className="flex gap-12 mb-12">
         {projects.map((project) => (
-          <div className="group relative rounded-[20px] overflow-hidden">
-            <img
-              src={project.image}
-              alt=""
-              className="object-cover w-full h-full "
-            />
-            <div className="absolute inset-0 gradient opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end text-white">
-              <h1 className="">Something</h1>
-              <h1>Something</h1>
-            </div>
-          </div>
+          <ProjectCard key={project.name} image={project.image} name={project.name} code={project.code} live={project.live}/>
         ))}
+      </div>
+      <div>
+        <a href="/projects">
+        <Button label={'See more projects'}/>
+        </a>
       </div>
     </div>
   );

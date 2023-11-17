@@ -12,5 +12,9 @@
 }
 
 .gradient {
-  background: linear-gradient(90deg, #B16CEA50 , #FF5E6950 , #FF8A5650 , #FFA84B50 );
+  background: linear-gradient(90deg, #B16CEA, #FF5E69 , #FF8A56 , #FFA84B );
+}
+
+.project-background {
+  background: linear-gradient(90deg, #B16CEA95 , #FF5E6995 , #FF8A5695 , #FFA84B95 );
 }

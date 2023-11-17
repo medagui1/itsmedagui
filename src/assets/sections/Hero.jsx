@@ -8,7 +8,7 @@ const Hero = () => {
         <h2 className="text-6xl font-semibold leading-tight mb-5">
           <span className="text-gradient">Hello, I'm MedAgui,</span>
           <br />
-          Fullstack Developer
+          Full Stack Web Developer
         </h2>
         <p>
           Experienced full-stack developer skilled in delivering end-to-end
