@@ -1,42 +1,20 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.text-gradient {
+  background: linear-gradient(90deg, #B16CEA , #FF5E69 , #FF8A56 , #FFA84B );
+  -webkit-background-clip: text; /* For Webkit-based browsers */
+  background-clip: text;
+  color: transparent; /* Hide the original text color */
+  display: inline-block;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.gradient {
+  background: linear-gradient(90deg, #B16CEA, #FF5E69 , #FF8A56 , #FFA84B );
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.project-background {
+  background: linear-gradient(90deg, #B16CEA95 , #FF5E6995 , #FF8A5695 , #FFA84B95 );
 }
