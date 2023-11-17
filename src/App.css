@@ -1,6 +1,19 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
+  max-width: 1280px;
+}
+
+
+body {
+  /* Default light mode background color */
+  background-color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Dark mode background color */
+  body {
+    background-color: #161513;
+  }
 }
 
 .text-gradient {

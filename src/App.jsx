@@ -5,10 +5,11 @@ import './App.css'
 import {AboutMe, CallToAction, Footer, Hero, Nav, Works} from './assets/sections/index'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  
 
   return (
-    <main className="font-raleway text-white bg-black_primary">
+    <main className="font-raleway dark:text-white text:black_primary bg-white dark:bg-black_primary max-w-[1280px] ">
       <nav>
         <Nav />
       </nav>
