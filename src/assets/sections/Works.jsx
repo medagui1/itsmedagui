@@ -5,19 +5,19 @@ import ProjectCard from "../components/ProjectCard";
 
 const Works = () => {
   return (
-    <div className="p-16">
-      <div className="max-w-[500px] mb-16">
-        <h2 className="text-gradient text-5xl font-semibold leading-tight mb-8">
+    <div className="p-16 max-sm:p-8">
+      <div className="max-w-[500px] mb-10">
+        <h2 className="text-gradient text-5xl font-semibold leading-tight mb-6">
           Selected Projects
         </h2>
-        <p>
+        <p className="text-xl">
           I possess the expertise to transform your design concepts into
           functional, professional-grade solutions.
         </p>
       </div>
-      <div className="flex gap-12 mb-12">
+      <div className="flex gap-12 flex-col mb-10 max-sm:gap-8">
         {projects.map((project) => (
-          <ProjectCard key={project.name} image={project.image} name={project.name} code={project.code} live={project.live}/>
+          <ProjectCard key={project.name} project={project} />
         ))}
       </div>
       <div>

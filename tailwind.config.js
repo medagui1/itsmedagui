@@ -11,10 +11,10 @@ export default {
     },
     extend: {
       colors : {
-        'black_primary' : '#161513',
+        'black_primary' : '#323234',
         'black_secondary' : '#1C1C22',
-        'white_primary' : '#F0F2F5',
-        'white_secondary' : '#ffffff'
+        'white_primary' : '#e6e6e6',
+        'white_secondary' : '#f5f5f5'
       }
     },
   },
