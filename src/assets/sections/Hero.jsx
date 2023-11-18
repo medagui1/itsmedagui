@@ -5,12 +5,12 @@ const Hero = () => {
   return (
     <div className="flex gap-8 justify-between items-center p-16 max-sm:p-8">
       <div className="max-w-[600px] ">
-        <h2 className="text-6xl  mb-5 font-bold max-sm:text-[48px] max-sm:leading-[50px] leading-[65px]">
+        <h2 className="text-6xl  mb-5 font-bold max-sm:text-[48px] max-sm:leading-[55px] leading-[65px]">
           <span className="text-gradient">Hello, I'm MedAgui,</span>
           <br />
           Full Stack Web Developer
         </h2>
-        <p>
+        <p className="text-xl">
           Experienced full-stack developer skilled in delivering end-to-end
           digital solutions for a seamless user experience.
         </p>

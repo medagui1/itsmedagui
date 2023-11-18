@@ -9,7 +9,7 @@ function App() {
   
 
   return (
-    <main className="font-raleway dark:text-white text:black_primary bg-white dark:bg-black_primary max-w-[1280px] ">
+    <main className="font-raleway dark:text-white text-black_primary bg-white_primary dark:bg-black_primary max-w-[1280px] ">
       <nav>
         <Nav />
       </nav>

@@ -6,13 +6,13 @@
 
 body {
   /* Default light mode background color */
-  background-color: white;
+  background-color: #e6e6e6;
 }
 
 @media (prefers-color-scheme: dark) {
   /* Dark mode background color */
   body {
-    background-color: #161513;
+    background-color: #323234;
   }
 }
 
