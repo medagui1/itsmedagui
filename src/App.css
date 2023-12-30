@@ -31,3 +31,34 @@ body {
 .project-background {
   background: linear-gradient(90deg, #B16CEA95 , #FF5E6995 , #FF8A5695 , #FFA84B95 );
 }
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  50% { border-color: transparent; }
+}
+
+.typewriter h2 span {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  padding-right: 16px;
+  border-right: 3px solid #FFA84B; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  animation: 
+    typing 2.5s steps(22) ,
+    blink-caret .5s step-end infinite alternate;
+}
+
+.trapezoid {
+  width: 200px;
+  height: 300px;
+  background: red;
+  margin: 50px;
+}

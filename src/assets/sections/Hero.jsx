@@ -3,8 +3,8 @@ import Button from "../components/Button";
 
 const Hero = () => {
   return (
-    <div className="flex gap-8 justify-between items-center p-16 max-sm:p-8">
-      <div className="max-w-[600px] ">
+    <header className="flex gap-8 justify-between items-center p-16 max-sm:p-8" id="home" data-aos='fade-down'>
+      <div className="max-w-[600px] typewriter">
         <h2 className="text-6xl  mb-5 font-bold max-sm:text-[48px] max-sm:leading-[55px] leading-[65px]">
           <span className="text-gradient">Hello, I'm MedAgui,</span>
           <br />
@@ -19,7 +19,11 @@ const Hero = () => {
           <Button label={"VIEW ALL WORKS"}/>
         </div>
       </div>
-    </div>
+      
+
+
+
+    </header>
   );
 };
 
