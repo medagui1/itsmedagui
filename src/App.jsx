@@ -5,8 +5,11 @@ import './App.css'
 import {AboutMe, CallToAction, Footer, Hero, Nav, Works} from './assets/sections/index'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import LogoCarousel from './assets/components/LogoCarousel'
 
 function App() {
+
+  
 
   useEffect(() => {
     AOS.init({duration : 400, delay : 200})

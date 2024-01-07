@@ -3,6 +3,9 @@
   max-width: 1280px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   /* Default light mode background color */
@@ -16,7 +19,11 @@ body {
   }
 }
 
-.text-gradient {
+
+
+
+.text-gradient,
+.logo:hover{
   background: linear-gradient(90deg, #B16CEA , #FF5E69 , #FF8A56 , #FFA84B );
   -webkit-background-clip: text; /* For Webkit-based browsers */
   background-clip: text;
@@ -56,9 +63,16 @@ body {
     blink-caret .5s step-end infinite alternate;
 }
 
-.trapezoid {
-  width: 200px;
-  height: 300px;
-  background: red;
-  margin: 50px;
+.logos-slide {
+  animation: 15s  infinite linear alternate slide;
+}
+
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
