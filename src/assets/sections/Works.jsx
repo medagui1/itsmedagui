@@ -5,7 +5,7 @@ import ProjectCard from "../components/ProjectCard";
 
 const Works = () => {
   return (
-    <section className="p-16 max-sm:p-8">
+    <section className="p-16 max-sm:p-8" id="projects">
       <div className="max-w-[500px] mb-10">
         <h2 className="text-gradient text-5xl font-semibold leading-tight mb-6" data-aos='fade-down'>
           Selected Projects
@@ -16,7 +16,7 @@ const Works = () => {
         </p>
       </div>
       <div className="flex gap-12 flex-col mb-10 max-sm:gap-8">
-        {projects.map((project) => (
+        {projects.slice(0,3).map((project) => (
           <ProjectCard key={project.name} project={project} />
         ))}
       </div>
