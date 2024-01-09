@@ -2,22 +2,6 @@ import Button from "./Button";
 import TagCard from "./TagCard";
 
 const ProjectCard = ({ project }) => {
-  // return (
-  //   <div className="group relative overflow-hidden">
-  //     <img src={image} alt="" className="object-cover w-full h-full " />
-  //     <div className="absolute inset-0 project-backgroundnp opacity-0 group-hover:opacity-100 transition-opacity duration-[600ms] flex flex-col justify-end text-white p-8">
-  //       <h1 className="text-4xl font-semibold">{name}</h1>
-  //       <div className="flex gap-4 mt-4">
-  //         <a href={code} target="blank">
-  //           <Button label={"Source Code"} isGradient={false} />
-  //         </a>
-  //         <a href={live} target="blank">
-  //           <Button label={"View Live"} />
-  //         </a>
-  //       </div>
-  //     </div>
-  //   </div>
-  // );
 
   return (
     <div className="flex p-6 shadow-xl bg-white_secondary dark:bg-black_secondary rounded-xl max-lg:flex-col gap-12" data-aos='fade-down'>
