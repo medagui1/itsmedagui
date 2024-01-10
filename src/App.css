@@ -81,3 +81,29 @@ body {
   box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.75); /* Adjust the shadow properties */
   
 }
+
+#menu-button {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5px;
+  width: 2.5rem;
+  height: 2.5rem;
+  align-items: end;
+  justify-content: center;
+}
+
+#menu-button span {
+  width: 25px;
+  height: 2.5px;
+  background-color: white;
+  border-radius: 2px;
+  transition: transform .3s ease-in-out, opacity .3s ease-in-out, background-color .5s ease-in-out, width .2s ease-in-out;
+}
+
+#menu-button span:nth-child(2) {
+  width: 15px;
+}
+
+#menu-button:hover span:nth-child(2) {
+  width: 25px;
+}
