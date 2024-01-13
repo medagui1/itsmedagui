@@ -7,8 +7,8 @@ const LogoCarousel = () => {
   return (
     <div className="logos-slide flex ">
       <div className="flex gap-12">
-        {carousel.map((logo) => (
-          <img src={logo} alt="" key={logo} className="h-10 " />
+        {carousel.map((logo, index) => (
+          <img src={logo} alt="" key={index} className="h-10 max-sm:h-8" />
         ))}
       </div>
     </div>

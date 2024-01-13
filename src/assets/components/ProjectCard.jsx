@@ -10,6 +10,7 @@ const ProjectCard = ({ project }) => {
         src={project.image}
         alt=""
         className="w-full object-cover scale-[1] transition-scale group-hover:scale-[1.2] duration-300 overflow-hidden "
+        width={550}
       />
       </div>
       <div className="flex-1 flex flex-col gap-4">
