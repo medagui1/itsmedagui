@@ -2,26 +2,53 @@ import Button from "../components/Button";
 import { navLinks } from "../constants/links";
 import "../../App.css";
 import MenuButton from "../components/MenuButton";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+      document.body.style.overflowX = 'hidden'
     }
-    else {
-      document.body.style.overflow = 'auto'
-    }
-     return () => {
-      document.body.style.overflow = 'auto'
-     }
-  }, [isMenuOpen])
+    return () => {
+      document.body.style.overflow = "auto";
+
+    };
+  }, [isMenuOpen]);
+
+  const divRef = useRef(null);
+  const [remainingHeight, setRemainingHeight] = useState(0);
+
+  useEffect(() => {
+    const updateHeight = () => {
+      if (divRef.current) {
+        const divHeight = divRef.current.offsetHeight;
+        const windowHeight = window.innerHeight;
+        const calculatedRemainingHeight = windowHeight - divHeight;
+        setRemainingHeight(calculatedRemainingHeight);
+      }
+    };
+
+    // Call the updateHeight function on mount
+    updateHeight();
+
+    // Attach an event listener to handle window resize
+    window.addEventListener("resize", updateHeight);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", updateHeight);
+    };
+  }, []);
 
   return (
-    <div className="relative">
+    <div className="relative ">
       <div
+        ref={divRef}
         className={`flex justify-between items-center  py-8 px-16 max-sm:px-8 max-sm:py-8`}
       >
         <div className="flex gap-16 items-center">
@@ -35,39 +62,51 @@ const Nav = () => {
               <a
                 key={link.name}
                 href={link.link}
-                className="hover:text-[#b5b5b5] transition-colors duration-300"
+                className="hover:text-[#b5b5b5] transition-colors duration-600"
               >
                 {link.name}
               </a>
             ))}
           </div>
         </div>
-        <div className="max-sm:hidden">
+        <div className="flex gap-4">
           {/*  */}
-          <a href="mailto:ismailregragui37@gmail.com">
+          <a href="mailto:ismailregragui37@gmail.com" className="max-sm:hidden ">
+            <Button label={"LET'S TALK"} isInversed={true} />
+          </a>
+          <div className="lg:hidden">
+          <MenuButton setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
+        </div>
+        </div>
+        
+      </div>
+
+      {/* Toggeable menu  */}
+      <div
+        className={` bg-black_primary z-[60] absolute w-full transition-[right] duration-[600ms] ease-in-out
+        ${isMenuOpen ? "right-[0px]" : "right-[-100vw] "}`}
+        style={{ height: remainingHeight }}
+      >
+        <div className="flex flex-col  justify-center items-center gap-16 text-2xl mt-20">
+          {navLinks.map((link, index) => (
+            <a
+              key={link.name}
+              href={link.link}
+              className={`hover:text-[#b5b5b5] translate-x-[-200px] opacity-0 ${
+                isMenuOpen && "translate-x-[0px] opacity-100"
+              } transition-[transform, opacity] duration-[.6s]  ease-in-out`}
+              style={{ transitionDelay: `${index * 80}ms ` }}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {link.name}
+            </a>
+          ))}
+        </div>
+        <div className="absolute bottom-0 flex w-full justify-center items-center mb-8 sm:hidden">
+          <a href="mailto:ismailregragui37@gmail.com" className="">
             <Button label={"LET'S TALK"} isInversed={true} />
           </a>
         </div>
-        <div className="sm:hidden">
-          <MenuButton setIsMenuOpen={setIsMenuOpen} isMenuOpen={isMenuOpen} />
-        </div>
-      </div>
-      <div
-        className={`flex flex-col bg-black_primary z-[100] h-[90vh] absolute right-0 w-full justify-center items-center gap-16 text-2xl transition-[right] duration-500 ease-in-out
-        ${isMenuOpen 
-        ? "right-[0px]" 
-        : "right-[-100vw] "}`}
-      >
-        {navLinks.map((link, index) => (
-          <a
-            key={link.name}
-            href={link.link}
-            className={`hover:text-[#b5b5b5] translate-x-[-200px] opacity-0 ${isMenuOpen && 'translate-x-[0px] opacity-100'} transition-[transform, opacity] duration-[.6s]  ease-in-out`}
-            style={{'transitionDelay' : `${index * 80}ms `}}
-            >
-            {link.name}
-          </a>
-        ))}
       </div>
     </div>
   );
