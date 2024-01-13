@@ -41,7 +41,7 @@ function App() {
 
   return (
     <main className="font-raleway dark:text-white text-black_primary bg-white_primary dark:bg-black_primary max-w-[1280px] ">
-      <nav className={`sticky top-0 bg-black_primary z-50  ${isScrolled && "nav-shadow"}`}>
+      <nav className={` bg-black_primary z-50  ${isScrolled && "nav-shadow"}`}>
         <Nav />
       </nav>
       <Hero />
