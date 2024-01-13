@@ -92,6 +92,20 @@ body {
   justify-content: center;
 }
 
+#menu-button.open span:nth-child(1) {
+  transform: translate3d(0, 6px, 0) rotate(45deg);
+}
+
+#menu-button.open span:nth-child(2) {
+  width: 0;
+  opacity: 0;
+}
+
+#menu-button.open span:nth-child(3) {
+  transform: translate3d(0, -6px, 0) rotate(-45deg);
+}
+
+
 #menu-button span {
   width: 25px;
   height: 2.5px;

@@ -1,13 +1,15 @@
 import '../../App.css'
+import { my_informations } from '../constants/links'
 
 const AboutMe = () => {
   return (
-    <section className="flex gap-16 justify-between items-start p-16">
-      <div>
-        <h1 className="text-gradient text-4xl font-semibold mb-4">MedAgui</h1>
-        <h2 className='text-4xl font-semibold'>Full Stack <br />Web Developer</h2>
-      </div>
-      
+    <section className="flex gap-16 max-sm:gap-12 justify-between items-center p-16 max-sm:p-8 max-sm:items-stretch  flex-wrap">
+      {my_informations.map((information, index) => (
+        <div className='' key={index}>
+          <h3 className='text-gradient uppercase font-bold text-lg max-sm:text-sm'> {information.title} </h3>
+          <p className='font-bold text-5xl max-sm:text-4xl'> {information.content} </p>
+        </div>
+      ))}
     </section>
   )
 }

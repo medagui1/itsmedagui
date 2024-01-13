@@ -62,3 +62,18 @@ export const projects = [
     live: "https://serene-zeta.vercel.app",
   },
 ];
+
+export const my_informations = [
+  {
+    title : 'Projects done',
+    content : '15+'
+  },
+  {
+    title : 'Experience',
+    content : '4+ Years'
+  },
+  {
+    title : 'Clients satisfaction',
+    content : '100%'
+  }
+]
