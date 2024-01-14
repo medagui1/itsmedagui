@@ -10,7 +10,6 @@ import {
 } from "./assets/sections/index";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import LogoCarousel from "./assets/components/LogoCarousel";
 
 function App() {
 

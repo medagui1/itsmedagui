@@ -1,6 +1,3 @@
-import hulty from "../images/hulty.webp";
-import furniro from '../images/furniro.webp'
-import saas from '../images/saas.webp'
 
 export const navLinks = [
   {
@@ -24,7 +21,7 @@ export const navLinks = [
 export const projects = [
   {
     name: "Furniro",
-    image: furniro,
+    image: "https://res.cloudinary.com/dgwuhfo96/image/upload/v1705246919/furniro_xxazgy.webp",
     code: "https://github.com/medagui1/furniro",
     live: "https://furniro-kappa.vercel.app",
     description:
@@ -35,7 +32,7 @@ export const projects = [
   },
   {
     name: "Saas",
-    image: saas,
+    image: "https://res.cloudinary.com/dgwuhfo96/image/upload/v1705247046/saas_nskh1k.webp",
     code: "https://github.com/medagui1/saas",
     live: "https://saas-self-gamma.vercel.app/",
     description:
@@ -46,7 +43,7 @@ export const projects = [
   },
   {
     name: "Hulty",
-    image: hulty,
+    image: "https://res.cloudinary.com/dgwuhfo96/image/upload/v1705247038/hulty_upp8dy.webp",
     code: "https://github.com/medagui1/hulty",
     live: "https://hulty.vercel.app",
     description:
@@ -57,7 +54,7 @@ export const projects = [
   },
   {
     name: "Serene",
-    image: hulty,
+    image: "",
     code: "https://github.com/medagui1/serene",
     live: "https://serene-zeta.vercel.app",
   },
