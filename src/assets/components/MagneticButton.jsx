@@ -70,7 +70,7 @@ const MagneticButton = () => {
       >
         <div className="flex justify-center items-center w-full h-full z-20 absolute">
           <div className="text-center" ref={magnetoTextRef}>
-            Let's Talk
+            My Works
           </div>
         </div>
         <div className="w-40 h-40 rounded-full bg-black_primary opacity-0 group-hover:opacity-100 absolute z-10 translate-y-[160px] group-hover:translate-y-0 transition-[opacity, transform] duration-500 ease-in-out"></div>

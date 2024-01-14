@@ -12,7 +12,6 @@ const Nav = () => {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
-      document.body.style.overflowX = 'hidden'
     }
     return () => {
       document.body.style.overflow = "auto";
@@ -83,8 +82,8 @@ const Nav = () => {
 
       {/* Toggeable menu  */}
       <div
-        className={` bg-black_primary z-[60] absolute w-full transition-[right] duration-[600ms] ease-in-out
-        ${isMenuOpen ? "right-[0px]" : "right-[-100vw] "}`}
+        className={` bg-black_primary z-[60] absolute right-0 transition-[width] duration-[600ms] ease-in-out
+        ${isMenuOpen ? "w-full" : "w-0 "}`}
         style={{ height: remainingHeight }}
       >
         <div className="flex flex-col  justify-center items-center gap-16 text-2xl mt-20">
@@ -92,8 +91,9 @@ const Nav = () => {
             <a
               key={link.name}
               href={link.link}
-              className={`hover:text-[#b5b5b5] translate-x-[-200px] opacity-0 ${
-                isMenuOpen && "translate-x-[0px] opacity-100"
+              className={`hover:text-[#b5b5b5]  ${
+                isMenuOpen ? "translate-x-[0px] opacity-100"
+                : "translate-x-[200px] opacity-0"
               } transition-[transform, opacity] duration-[.6s]  ease-in-out`}
               style={{ transitionDelay: `${index * 80}ms ` }}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -102,7 +102,10 @@ const Nav = () => {
             </a>
           ))}
         </div>
-        <div className="absolute bottom-0 flex w-full justify-center items-center mb-8 sm:hidden">
+        <div className={`absolute bottom-0 flex w-full justify-center items-center mb-8 sm:hidden ${
+                isMenuOpen ? "translate-x-[0px] opacity-100"
+                : "translate-x-[200px] opacity-0"
+              } transition-[transform, opacity] duration-[.6s]  ease-in-out`}>
           <a href="mailto:ismailregragui37@gmail.com" className="">
             <Button label={"LET'S TALK"} isInversed={true} />
           </a>

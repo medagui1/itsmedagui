@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import {
   AboutMe,
@@ -40,7 +38,7 @@ function App() {
 
 
   return (
-    <main className="font-raleway dark:text-white text-black_primary bg-white_primary dark:bg-black_primary max-w-[1280px] ">
+    <main className="font-raleway dark:text-white text-black_primary bg-white_primary dark:bg-black_primary max-w-[1280px] " style={{overflowX : 'hidden'}}>
       <nav className={` bg-black_primary z-50  ${isScrolled && "nav-shadow"}`}>
         <Nav />
       </nav>

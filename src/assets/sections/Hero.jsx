@@ -65,7 +65,9 @@ const Hero = () => {
           <p>Scroll down</p>
           <p className="pointer text-2xl">&darr;</p>
         </a>
+        <a href="#projects">
         <MagneticButton />
+        </a>
       </div>
     </header>
   );
