@@ -57,15 +57,8 @@ const Hero = () => {
         <LogoCarousel />
       </div>
 
-      <div className="w-full flex justify-between items-end mt-32 mr-12 flex-wrap gap-16 max-sm:flex-col-reverse max-sm:mt-16 max-lg:mt-20 max-sm:items-center">
-        <a
-          href="#projects"
-          className="flex flex-col justify-center items-center"
-        >
-          <p>Scroll down</p>
-          <p className="pointer text-2xl">&darr;</p>
-        </a>
-        <a href="#projects">
+      <div className="w-full flex justify-end items-end mt-32 mr-12 flex-wrap gap-16 max-sm:flex-col-reverse max-sm:mt-16 max-lg:mt-20 max-sm:items-center">
+        <a href="#projects" className="bounce">
         <MagneticButton />
         </a>
       </div>
