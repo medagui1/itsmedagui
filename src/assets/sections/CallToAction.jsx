@@ -1,5 +1,3 @@
-import Blob from "../components/Blob"
-
 const CallToAction = () => {
   return (
     <section>

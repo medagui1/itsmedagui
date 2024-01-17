@@ -1,7 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import { gsap, Power4, Elastic } from "gsap";
-import Blob from "./Blob";
-
 const MagneticButton = () => {
   // Refs for magneto elements
   const magnetoRef = useRef(null);
