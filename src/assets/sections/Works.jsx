@@ -1,6 +1,4 @@
 import { projects } from "../constants/links";
-import "../../App.css";
-import Button from "../components/Button";
 import ProjectCard from "../components/ProjectCard";
 
 const Works = () => {
@@ -15,15 +13,12 @@ const Works = () => {
           functional, professional-grade solutions.
         </p>
       </div>
-      <div className="flex gap-12 flex-col mb-10 max-sm:gap-8">
+      <div className="flex gap-12 flex-col max-sm:gap-8">
         {projects.slice(0,3).map((project) => (
           <ProjectCard key={project.name} project={project} />
         ))}
       </div>
       <div>
-        <a href="/projects">
-        <Button label={'See more projects'}/>
-        </a>
       </div>
     </section>
   );

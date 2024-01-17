@@ -1,6 +1,10 @@
+import Blob from "../components/Blob"
+
 const CallToAction = () => {
   return (
-    <div>CallToAction</div>
+    <section>
+    
+    </section>
   )
 }
 
