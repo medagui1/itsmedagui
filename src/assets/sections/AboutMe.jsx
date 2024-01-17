@@ -3,7 +3,7 @@ import { my_informations } from '../constants/links'
 
 const AboutMe = () => {
   return (
-    <section className="flex gap-16 max-sm:gap-12 justify-between items-center px-16 py-4 max-sm:p-8 max-sm:items-stretch  flex-wrap">
+    <section data-aos='fade-down' className="flex gap-16 max-sm:gap-12 justify-between items-center px-16 py-4 max-sm:p-8 max-sm:items-stretch  flex-wrap">
       {my_informations.map((information, index) => (
         <div className='' key={index}>
           <h3 className='text-gradient uppercase font-bold text-lg max-sm:text-sm'> {information.title} </h3>

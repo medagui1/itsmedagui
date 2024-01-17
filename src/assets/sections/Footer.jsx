@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="flex justify-center items-center p-8 flex-col w-full">
+    <footer data-aos='fade-down' className="flex justify-center items-center p-8 flex-col w-full">
       <hr className="h-[1px] bg-white w-full my-8"/>
       <div className="flex justify-between w-full  items-center">
         <h3 className="font-bold text-4xl">MedAgui.</h3>
