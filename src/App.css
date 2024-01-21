@@ -109,9 +109,15 @@ body {
 #menu-button span {
   width: 25px;
   height: 2.5px;
-  background-color: white;
+  background-color: #323234;
   border-radius: 2px;
   transition: transform .3s ease-in-out, opacity .3s ease-in-out, background-color .5s ease-in-out, width .2s ease-in-out;
+}
+
+@media (prefers-color-scheme: dark) {
+  #menu-button span {
+    background-color: #fff;
+  }
 }
 
 #menu-button span:nth-child(2) {
