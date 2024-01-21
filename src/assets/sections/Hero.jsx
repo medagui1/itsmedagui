@@ -46,7 +46,7 @@ const Hero = () => {
             |{" "}
           </span>
           <br />
-          <span className="text-white">Full Stack Web Developer</span>
+          <span className="dark:text-white text-black_primary">Full Stack Web Developer</span>
         </h2>
         <p className="text-xl">
           Experienced full-stack developer skilled in delivering end-to-end
