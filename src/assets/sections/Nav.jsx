@@ -61,7 +61,7 @@ const Nav = () => {
               <a
                 key={link.name}
                 href={link.link}
-                className="hover:text-[#b5b5b5] transition-colors duration-600"
+                className="hover:text-[#b5b5b5]  transition-colors duration-600"
               >
                 {link.name}
               </a>
@@ -82,7 +82,7 @@ const Nav = () => {
 
       {/* Toggeable menu  */}
       <div
-        className={` bg-black_primary z-[60] absolute right-0 transition-[width] duration-[600ms] ease-in-out
+        className={` dark:bg-black_primary bg-white_primary z-[60] absolute right-0 transition-[width] duration-[600ms] ease-in-out
         ${isMenuOpen ? "w-full" : "w-0 "}`}
         style={{ height: remainingHeight }}
       >
