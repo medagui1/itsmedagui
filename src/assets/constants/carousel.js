@@ -3,14 +3,12 @@ const prefersDarkMode =
   window.matchMedia("(prefers-color-scheme: dark)").matches;
 
 const iconFolderPath = prefersDarkMode
-  ? "../../logos/light/"
-  : "../../logos/dark/";
+  ? "../../logos/dark/"
+  : "../../logos/light/";
 
-// import git from iconFolderPath + 'git.svg';
-// import redis from iconFolderPath + 'redis.svg';
 const importIcon = async (iconName) => {
   const module = await import(iconFolderPath + iconName + ".svg");
-  return module.default; // Assuming the SVG is the default export
+  return module.default; 
 };
 
 const html = await importIcon("html");

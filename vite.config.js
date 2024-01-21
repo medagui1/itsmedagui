@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     // Set the production mode
-    target: 'modules', // ES module output
+    target: 'esnext', // ES module output
     minify: 'terser',   // Minify with Terser
   },
 });
