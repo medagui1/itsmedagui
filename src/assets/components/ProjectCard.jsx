@@ -4,7 +4,7 @@ import TagCard from "./TagCard";
 const ProjectCard = ({ project }) => {
 
   return (
-    <div className="flex p-6 shadow-xl bg-white_secondary dark:bg-black_secondary rounded-xl max-lg:flex-col gap-12" data-aos='fade-down'>
+    <div className="flex p-6 shadow-xl bg-white_secondary dark:bg-black_secondary rounded-xl max-lg:flex-col gap-12 " data-aos='fade-down'>
       <div className="group max-h-[800px] w-[50%]  max-lg:w-full  overflow-hidden  rounded-[12px] ">
       <img
         loading="lazy"

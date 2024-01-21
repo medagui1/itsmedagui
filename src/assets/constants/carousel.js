@@ -1,33 +1,33 @@
-import reactjs from '../../logos/light/reactjs.svg'
-import css from '../../logos/light/css.svg'
-import django from '../../logos/light/django.svg'
-import git from '../../logos/light/git.svg'
-import html from '../../logos/light/html.svg'
-import javascript from '../../logos/light/javascript.svg'
-import postgresql from '../../logos/light/postgresql.svg'
-import python from '../../logos/light/python.svg'
-import redis from '../../logos/light/redis.svg'
-import tailwindcss from '../../logos/light/tailwindcss.svg'
+const prefersDarkMode =
+  window.matchMedia &&
+  window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-export const carousel = [
-    html,
-    css,
-    javascript,
-    python,
-    reactjs,
-    tailwindcss,
-    django,
-    postgresql,
-    redis,
-    git,
-    html,
-    css,
-    javascript,
-    python,
-    reactjs,
-    tailwindcss,
-    django,
-    postgresql,
-    redis,
-    git
-]
+const iconFolderPath = prefersDarkMode
+  ? "../../logos/light/"
+  : "../../logos/dark/";
+
+// import git from iconFolderPath + 'git.svg';
+// import redis from iconFolderPath + 'redis.svg';
+const importIcon = async (iconName) => {
+  const module = await import(iconFolderPath + iconName + ".svg");
+  return module.default; // Assuming the SVG is the default export
+};
+
+const html = await importIcon("html");
+const css = await importIcon("css");
+const javascript = await importIcon("javascript");
+const python = await importIcon("python");
+const reactjs = await importIcon("reactjs");
+const tailwindcss = await importIcon("tailwindcss");
+const django = await importIcon("django");
+const postgresql = await importIcon("postgresql");
+const redis = await importIcon("redis");
+const git = await importIcon("git");
+
+
+const originalCarousel = [html, css, javascript, python, reactjs, tailwindcss, django, postgresql, redis, git];
+
+// Duplicating the array
+const carousel = [...originalCarousel, ...originalCarousel];
+
+export default carousel;

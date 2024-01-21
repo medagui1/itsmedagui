@@ -38,7 +38,7 @@ function App() {
 
   return (
     <main className="font-raleway dark:text-white text-black_primary bg-white_primary dark:bg-black_primary max-w-[1280px] " style={{overflowX : 'hidden'}}>
-      <nav className={` bg-black_primary z-50  ${isScrolled && "nav-shadow"}`}>
+      <nav className={`z-50  ${isScrolled && "nav-shadow"}`}>
         <Nav />
       </nav>
       <Hero />
@@ -47,9 +47,7 @@ function App() {
       <section>
         <CallToAction />
       </section>
-      <footer>
         <Footer />
-      </footer>
     </main>
   );
 }

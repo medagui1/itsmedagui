@@ -1,5 +1,5 @@
 import React from "react";
-import { carousel } from "../constants/carousel";
+import carousel from "../constants/carousel";
 import '../../App.css'
 
 
