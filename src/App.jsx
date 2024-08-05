@@ -10,6 +10,7 @@ import {
 } from "./assets/sections/index";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import UpgradeSoonBanner from "./assets/components/UpgradeSoonBanner";
 
 function App() {
 
@@ -38,7 +39,8 @@ function App() {
 
   return (
     <main className="font-raleway dark:text-white text-black_primary bg-white_primary dark:bg-black_primary max-w-[1280px] " style={{overflowX : 'hidden'}}>
-      <nav className={`z-50  ${isScrolled && "nav-shadow"}`}>
+      <UpgradeSoonBanner />
+      <nav className={`z-50 mt-16 ${isScrolled && "nav-shadow"}`}>
         <Nav />
       </nav>
       <Hero />
