@@ -102,7 +102,7 @@ const Nav = () => {
             </a>
           ))}
         </div>
-        <div className={`absolute bottom-0 flex w-full justify-center items-center mb-8 sm:hidden ${
+        <div className={`absolute bottom-16 flex w-full justify-center items-center mb-12 sm:hidden ${
                 isMenuOpen ? "translate-x-[0px] opacity-100"
                 : "translate-x-[200px] opacity-0"
               } transition-[transform, opacity] duration-[.6s]  ease-in-out`}>
