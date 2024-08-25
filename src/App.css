@@ -1,129 +1,145 @@
-#root {
-  margin: 0 auto;
-  max-width: 1280px;
-}
-
-html {
-  scroll-behavior: smooth;
+:root {
+    --black_primary: #272727;
+    --white_primary: #e5f4e3;
+    --text_primary: #ca2c92;
 }
 
 body {
-  /* Default light mode background color */
-  background-color: #e6e6e6;
+    background-color: var(--white_primary);
+    color: var(--black_primary);
 }
+
 
 @media (prefers-color-scheme: dark) {
-  /* Dark mode background color */
-  body {
-    background-color: #323234;
-  }
+
+    /* Dark mode colors */
+    body {
+        background-color: var(--black_primary);
+        color: var(--white_primary);
+    }
 }
 
+/*
+*   HEADER
+*/
 
-
-
-.text-gradient,
-.logo:hover{
-  background: linear-gradient(90deg, #B16CEA , #FF5E69 , #FF8A56 , #FFA84B );
-  -webkit-background-clip: text; /* For Webkit-based browsers */
-  background-clip: text;
-  color: transparent; /* Hide the original text color */
-  display: inline-block;
-}
-
-.gradient {
-  background: linear-gradient(90deg, #B16CEA, #FF5E69 , #FF8A56 , #FFA84B );
-}
-
-.project-background {
-  background: linear-gradient(90deg, #B16CEA95 , #FF5E6995 , #FF8A5695 , #FFA84B95 );
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink-caret {
-  50% { border-color: transparent; }
-}
-
-.typewriter h2 span {
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  padding-right: 16px;
-  border-right: 3px solid #FFA84B; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  animation: 
-    typing 2.5s steps(22) ,
-    blink-caret .5s step-end infinite alternate;
-}
-
-.logos-slide {
-  animation: 15s  infinite linear alternate slide;
-}
-
-
-@keyframes slide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.nav-shadow {
-  box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.75); /* Adjust the shadow properties */
-  
+.title {
+    font-family: "Recoleta", "serif";
 }
 
 #menu-button {
-  display: flex;
-  flex-direction: column;
-  gap: 3.5px;
-  width: 2.5rem;
-  height: 2.5rem;
-  align-items: flex-end;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5px;
+    width: 2.5rem;
+    height: 2.5rem;
+    align-items: flex-end;
+    justify-content: center;
 }
-
-#menu-button.open span:nth-child(1) {
-  transform: translate3d(0, 6px, 0) rotate(45deg);
-}
-
-#menu-button.open span:nth-child(2) {
-  width: 0;
-  opacity: 0;
-}
-
-#menu-button.open span:nth-child(3) {
-  transform: translate3d(0, -6px, 0) rotate(-45deg);
-}
-
 
 #menu-button span {
-  width: 25px;
-  height: 2.5px;
-  background-color: #323234;
-  border-radius: 2px;
-  transition: transform .3s ease-in-out, opacity .3s ease-in-out, background-color .5s ease-in-out, width .2s ease-in-out;
-}
-
-@media (prefers-color-scheme: dark) {
-  #menu-button span {
-    background-color: #fff;
-  }
+    width: 25px;
+    height: 2.5px;
+    border-radius: 2px;
+    background-color: var(--black_primary);
+    transition: width .3s ease-in-out, transform .3s ease-in-out, opacity .3s ease-in-out;
 }
 
 #menu-button span:nth-child(2) {
-  width: 15px;
+    width: 15px;
 }
 
 #menu-button:hover span:nth-child(2) {
-  width: 25px;
+    width: 25px;
+}
+
+/* Toggle Menu Animation */
+#menu-button.open span:nth-child(1) {
+    transform: translate3d(0, 6px, 0) rotate(45deg);
+}
+
+#menu-button.open span:nth-child(2) {
+    opacity: 0;
+}
+
+#menu-button.open span:nth-child(3) {
+    transform: translate3d(0, -6px, 0) rotate(-45deg);
+}
+
+/* Nav */
+
+.nav-arrow {
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+
+.nav-arrow span {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--white_primary);
+}
+
+.nav-arrow span:nth-child(1) {
+    width: 16px;
+    height: 1px;
+}
+
+.nav-arrow span:nth-child(2) {
+    height: 16px;
+    width: 1px;
+}
+
+.nav-arrow span:nth-child(3) {
+    height: 32px;
+    width: 1px;
+    transform: translate(-12px, -4px) rotate(45deg);
+}
+
+
+.nav-arrow span:nth-child(2) {
+    height: 16px;
+    width: 1px;
+}
+
+.nav-arrow span:nth-child(3) {
+    height: 32px;
+    width: 1px;
+}
+
+
+.nav-link .nav-link-space {
+    width: 0;
+    transition: width .4s ease-in-out;
+}
+
+.nav-link:hover .nav-link-space {
+width: 100%;
+}
+
+.nav-arrow span{
+    transition: transform 0.4s ease-in-out
+}
+
+.nav-link:hover .nav-arrow span:nth-child(1){
+    transform: rotate(45deg);
+}
+
+.nav-link:hover .nav-arrow span:nth-child(2){
+    transform: rotate(45deg) translate(-3px, 9px);
+}
+
+.nav-link:hover .nav-arrow span:nth-child(3){
+
+transform: rotate(90deg) translate(-10px, 19px);
+}
+
+@media (prefers-color-scheme: dark) {
+
+    /* Dark mode colors */
+    #menu-button span {
+        background-color: var(--white_primary);
+    }
 }

@@ -1,9 +1,14 @@
 import React from "react";
-import '../../App.css'
+import "../../App.css";
 
-const MenuButton = ({setIsMenuOpen, isMenuOpen}) => {
+const MenuButton = ({ toggleMenu, isMenuOpen }) => {
   return (
-    <button aria-label="menu" className={`button ${isMenuOpen && 'open'} z-30 `} id="menu-button" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+    <button
+      aria-label="menu"
+      id="menu-button"
+      onClick={toggleMenu}
+      className={`${isMenuOpen ? "open" : ""}`}
+    >
       <span></span>
       <span></span>
       <span></span>
