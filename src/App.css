@@ -1,7 +1,8 @@
 :root {
-    --black_primary: #272727;
+    --black_primary: #141414;
     --white_primary: #e5f4e3;
     --text_primary: #ca2c92;
+    box-sizing: border-box;
 }
 
 body {
@@ -26,6 +27,7 @@ body {
 .title {
     font-family: "Recoleta", "serif";
 }
+
 
 #menu-button {
     display: flex;
@@ -79,7 +81,15 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    background-color: var(--white_primary);
+
+    background-color: var(--black_primary);
+}
+
+@media (prefers-color-scheme: dark) {
+
+    .nav-arrow span {
+        background-color: var(--white_primary);
+    }
 }
 
 .nav-arrow span:nth-child(1) {
@@ -116,24 +126,24 @@ body {
 }
 
 .nav-link:hover .nav-link-space {
-width: 100%;
+    width: 100%;
 }
 
-.nav-arrow span{
+.nav-arrow span {
     transition: transform 0.4s ease-in-out
 }
 
-.nav-link:hover .nav-arrow span:nth-child(1){
+.nav-link:hover .nav-arrow span:nth-child(1) {
     transform: rotate(45deg);
 }
 
-.nav-link:hover .nav-arrow span:nth-child(2){
+.nav-link:hover .nav-arrow span:nth-child(2) {
     transform: rotate(45deg) translate(-3px, 9px);
 }
 
-.nav-link:hover .nav-arrow span:nth-child(3){
+.nav-link:hover .nav-arrow span:nth-child(3) {
 
-transform: rotate(90deg) translate(-10px, 19px);
+    transform: rotate(90deg) translate(-10px, 19px);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -142,4 +152,62 @@ transform: rotate(90deg) translate(-10px, 19px);
     #menu-button span {
         background-color: var(--white_primary);
     }
+}
+
+.text {
+    font-family: "Gordita", "sans-serif";
+    font-size: 20px;
+}
+
+
+.logos-slide {
+    animation: 8s infinite linear alternate slide;
+}
+
+.logos-slide:hover {
+    animation-play-state: paused;
+}
+
+.logo-slider-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.logo-slider-item p {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transform: translateY(36px);
+    text-align: start;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    transition-delay: 0.1s;
+}
+
+.logo-slider-item:hover p {
+    opacity: 1;
+    transform: translateY(20px);
+}
+
+.logo-slider-item div {
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.logo-slider-item:hover div {
+    transform: translateY(-20px);
+    opacity: 0;
+}
+
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-25%);
+    }
+}
+
+.logos-slide svg path {
+    /* fill: yellow; */
 }
