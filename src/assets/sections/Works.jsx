@@ -8,7 +8,7 @@ const Works = () => {
       <h2 className='title text-4xl text-text_primary'>Selected Works.</h2>
       <ul>
         {projects.slice(0,3).map((project, index) => (
-          <ProjectCard project={project} key={index} />
+          <ProjectCard project={project} key={index}  index={index} />
         ))}
       </ul>
     </section>
