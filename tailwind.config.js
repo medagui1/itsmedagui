@@ -10,9 +10,9 @@ export default {
     },
     extend: {
       colors: {
-        black_primary: "#272727",
-        white_primary: "#e5f4e3w",
-        text_primary: "#ca2c92",
+        black_primary: "#141414",
+        white_primary: "#e5f4e3",
+        text_primary: "#d7a3e5",
       },
     },
   },

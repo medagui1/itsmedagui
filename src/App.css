@@ -28,6 +28,32 @@ body {
 *   HEADER
 */
 
+#lhero {
+    background: linear-gradient(15deg, #70d5bb, #936bf7, #ff7f43);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 0s ease infinite;
+    -moz-animation: AnimationName 0s ease infinite;
+    animation: AnimationName 0s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:33% 0%}
+    50%{background-position:68% 100%}
+    100%{background-position:33% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:33% 0%}
+    50%{background-position:68% 100%}
+    100%{background-position:33% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:33% 0%}
+    50%{background-position:68% 100%}
+    100%{background-position:33% 0%}
+}
+
+
 .title {
     font-family: "Recoleta", "serif";
 }
@@ -280,7 +306,7 @@ body {
 
 
 .cursor {
-    display: block;
+    display: none;
     position: fixed;
     top: 0;
     left: 0;

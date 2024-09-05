@@ -68,12 +68,12 @@ const MagneticButton = () => {
         onMouseMove={activateMagneto}
         onMouseLeave={resetMagneto}
       >
-        <div className="flex justify-center items-center w-full h-full z-20 absolute">
-          <div className="text-center" ref={magnetoTextRef}>
-            My Works
+        <div className="flex justify-center items-center w-full h-full z-10 absolute">
+          <div className="text-center title" ref={magnetoTextRef}>
+            Selected Works
           </div>
         </div>
-        <div className="w-40 h-40 rounded-full dark:bg-black_primary bg-white_primary opacity-0 group-hover:opacity-100 absolute z-10 translate-y-[160px] group-hover:translate-y-0 transition-[opacity, transform] duration-500 ease-in-out"></div>
+        <div className="w-40 h-40 rounded-full dark:bg-black_primary bg-white_primary opacity-0 group-hover:opacity-100 absolute z-0 translate-y-[160px] group-hover:translate-y-0 transition-[opacity, transform] duration-500 ease-in-out"></div>
       </div>
     </div>
   );
