@@ -8,10 +8,8 @@ import {
   Nav,
   Works,
 } from "./assets/sections/index";
-import UpgradeSoonBanner from "./assets/components/UpgradeSoonBanner";
 import Header from "./assets/sections/Header";
 import Portfolio from "./assets/sections/Works";
-import AnimatedGradient from "./assets/components/AnimatedGradient";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import CustomCursor from "./assets/components/CustomCursor";
