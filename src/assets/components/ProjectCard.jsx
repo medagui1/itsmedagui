@@ -57,7 +57,6 @@ const ProjectCard = ({ project, index }) => {
     splitTextIntoSpans(projectNameRef, '')
     const tl = gsap.timeline({scrollTrigger : {
       trigger: `.project-name-${index}`,
-    // markers: true, // Uncomment for debugging
     start: 'top 90%',
     }})
     tl.fromTo(
@@ -82,12 +81,13 @@ const ProjectCard = ({ project, index }) => {
       scale : 1,
       duration: 0.2,
     })
+    ScrollTrigger.refresh()
   }, [])
 
   return (
-    <div>
+    <div className="sticky top-[72px] left-0 bg-black_primary">
       <hr className="bg-white_primary h-[1px] mt-8" />
-      <div className="flex py-4 flex-wrap">
+      <div className="flex py-4 flex-wrap sticky -top-[20vh] ">
         <div
           className={`overflow-hidden project-img-${index}`}
           ref={imgContainerRef}
