@@ -5,11 +5,14 @@ import ProjectCardArrow from "./ProjectCardArrow";
 import TagCard from "./TagCard";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import { useGSAP } from "@gsap/react";
+import { splitTextIntoSpans } from "../utilities/splitTextIntoSpans";
 
 const ProjectCard = ({ project, index }) => {
   const [transformOrigin, setTransformOrigin] = useState("50% 50%");
   const imgContainerRef = useRef(null);
   const imgRef = useRef(null)
+  const projectNameRef = useRef(null)
 
   const handleMouseMove = (e) => {
     const rect = imgContainerRef.current.getBoundingClientRect();
@@ -38,10 +41,9 @@ const ProjectCard = ({ project, index }) => {
         scale: 1,
         opacity: 1,
         duration: 0.4,
-        // ease: "power2.in",
         scrollTrigger: {
           trigger: imageSelector,
-          start: "top 90%",
+          start: "top bottom",
           end: "top 70%",
         },
       }
@@ -50,6 +52,37 @@ const ProjectCard = ({ project, index }) => {
       ScrollTrigger.getById(imageSelector)?.kill();
     };
   }, [index]);
+
+  useGSAP(() => {
+    splitTextIntoSpans(projectNameRef, '')
+    const tl = gsap.timeline({scrollTrigger : {
+      trigger: `.project-name-${index}`,
+    // markers: true, // Uncomment for debugging
+    start: 'top 90%',
+    }})
+    tl.fromTo(
+      `.project-name-${index} span`,
+      {
+        opacity: 0,
+        scale : 0.2
+      },
+      {
+        opacity: 1,
+        scale : 1,
+        duration: 0.2,
+        stagger: 0.1,
+      }
+    );
+    tl.fromTo(`.arrow-container-${index}`, {
+      opacity: 0,
+      scale : 0.2
+    },
+    {
+      opacity: 1,
+      scale : 1,
+      duration: 0.2,
+    })
+  }, [])
 
   return (
     <div>
@@ -71,8 +104,10 @@ const ProjectCard = ({ project, index }) => {
         <div className="w-full py-4 pr-4 flex gap-4 items-center">
           {/* <div className="w-full h-[1px] bg-white_primary"></div> */}
           <a className="flex gap-4 items-first-baseline my-2" href="#">
-            <h3 className="title text-right text-3xl"> {project.name} </h3>
+            <h3 className={`title text-right text-3xl project-name-${index}`} ref={projectNameRef}> {project.name} </h3>
+            <div className={`arrow-container-${index}`}>
             <ProjectCardArrow />
+            </div>
           </a>
         </div>
         {/* <div className="flex flex-wrap gap-2">
