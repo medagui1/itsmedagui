@@ -20,8 +20,10 @@ function App() {
 
   const [isScrolled, setIsScrolled] = useState(false)
 
+  // gsap.globalTimeline;
+
   return (
-    <main className="overflow-hidden">
+    <main className="">
       <Header />
       <Hero />
       <Portfolio />
