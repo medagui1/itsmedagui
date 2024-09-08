@@ -8,22 +8,22 @@ const ProjectCardArrow = () => {
       viewBox="0 0 14 14"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
       className="rotate-[270deg] "
     >
       <title>arrow-up-right</title>
       <g
         id="Page-1"
         stroke="none"
-        stroke-width="1"
+        strokeWidth="1"
         fill="none"
-        fill-rule="evenodd"
+        fillRule="evenodd"
       >
         <g
           id="Artboard"
           transform="translate(-1019.000000, -279.000000)"
           stroke="#FFFFFF"
-          stroke-width="1.5"
+          strokeWidth="1.5"
         >
           <g
             id="arrow-up-right"
