@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MenuButton from "../components/MenuButton";
 import { navLinks } from "../constants/links";
 import NavArrow from "../components/NavArrow";
@@ -6,7 +6,7 @@ import { splitTextIntoSpans } from "../utilities/splitTextIntoSpans";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-const Header = () => {
+const Header = ({headerHeight}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const lastScrollY = useRef(0);
@@ -44,11 +44,11 @@ const Header = () => {
       {
         opacity: 0,
         // y: "100%",
-        scale : 0.2
+        scale: 0.2,
       },
       {
         opacity: 1,
-        scale : 1,
+        scale: 1,
         // y: 0,
         delay: 0.2,
         duration: 0.4,
@@ -63,7 +63,7 @@ const Header = () => {
       },
       {
         opacity: 1,
-        duration : 0.4,
+        duration: 0.4,
         x: 0,
       }
     );
@@ -76,11 +76,13 @@ const Header = () => {
 
   return (
     <header
-      className={`flex h-[104px] bg-black_primary justify-between p-8 w-full fixed top-0 transition-transform duration-300 z-[20] ${
-        isVisible ? "translate-y-0" : "-translate-y-full"
-      }`}
-      ref={headerRef}
+    className={`flex bg-black_primary justify-between p-normal w-full fixed top-0 transition-transform duration-300 z-[20] ${
+    isVisible ? "translate-y-0" : "-translate-y-full"
+    }`}
+    ref={headerRef}
+    style={{ height : headerHeight }}
     >
+    
       <a
         href="/"
         className="title text-2xl font-bold overflow-hidden"
@@ -92,12 +94,13 @@ const Header = () => {
       <MenuButton toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
 
       <nav
-        className={` absolute mt-[104px] top-0  p-8 right-0 dark:bg-black_primary bg-white_primary h-[100vh] w-full z-[20] duration-500 transition-transform ease-in-out ${
+        className={` absolute top-0  p-wide right-0 dark:bg-black_primary bg-white_primary h-[100vh] w-full z-[20] duration-500 transition-transform ease-in-out ${
           isMenuOpen
             ? " translate-x-0 delay-0"
             : "translate-x-[100%] delay-[.6s] "
         }`}
         id="menu"
+        style={{ marginTop : headerHeight }}
       >
         <ul>
           {navLinks.map((item, index) => (
@@ -108,7 +111,7 @@ const Header = () => {
               <a
                 href={item.link}
                 onClick={toggleMenu}
-                className={` nav-link transition-[transform, opacity] duration-500 ease-in-out  text-4xl py-6 flex items-center gap-4
+                className={` nav-link transition-[transform, opacity] duration-500 ease-in-out  text-4xl py-normal flex items-center gap-thin
                     ${
                       isMenuOpen
                         ? "translate-x-0 opacity-100"
@@ -117,9 +120,9 @@ const Header = () => {
                 style={{ transitionDelay: `${index * 100}ms` }}
                 aria-label={`Navigate to ${item.name}`}
               >
-                <div className="flex items-end gap-3">
+                <div className="flex items-baseline gap-3">
                   <p className="title">{item.name}</p>
-                  <p className="text-sm text-end text-[#e5f4e380] mb-[6px] ">
+                  <p className="text-sm text-end text-[#e5f4e380]">
                     (0{index + 1})
                   </p>
                 </div>
