@@ -1,6 +1,3 @@
-import React from "react";
-import "../../App.css";
-
 const MenuButton = ({ toggleMenu, isMenuOpen }) => {
   return (
     <button

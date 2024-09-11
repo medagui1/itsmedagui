@@ -1,5 +1,3 @@
-import React from "react";
-
 const NavArrow = ({scale}) => {
   return (
     <div className={`nav-arrow`} style={{ scale : scale }}>
