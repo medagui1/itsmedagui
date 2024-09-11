@@ -1,14 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import { useRef } from "react";
 import LogoCarousel from "../components/LogoCarousel";
 import MagneticButton from "../components/MagneticButton";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { splitTextIntoSpans } from "../utilities/splitTextIntoSpans";
 
-const Hero = () => {
+const Hero = ({headerHeight}) => {
   const textRef = useRef(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     const tl = gsap.timeline();
 
     // Split text into spans
@@ -51,7 +51,6 @@ const Hero = () => {
         duration: 0.4,
         stagger: 0.1,
       }
-      // "<" // Ensure this animation starts at the same time as the previous one
     );
     tl.fromTo(
       ".container",
@@ -79,33 +78,24 @@ const Hero = () => {
         opacity: 1,
         scale: 1,
         duration : 0.4,
-        // scrollTrigger: {
-        //   trigger: ".bounce",
-        //   markers: true,
-        //   start: "top 90%",
-        //   end : 'top 70%'
-        // },
       }
     );
   }, []);
 
   return (
-    <section className="p-8  mt-[104px]" id="hero">
-      <h1 className="text-6xl title text-text_primary overflow-hidden dark:bg-black_primary mb-2">
+    <section className={`p-normal`} id="hero" style={{ marginTop : headerHeight }}>
+      <h1 className="text-6xl title text-text_primary overflow-hidden dark:bg-black_primary mb-thinner">
         <span className="inline-block translate-y-[100%] header_title">
           Hello, I'm MedAgui.
         </span>
       </h1>
-      <h1 className="title text-4xl overflow-hidden dark:bg-black_primary">
+      <h2 className="title text-4xl overflow-hidden dark:bg-black_primary">
         <span className="inline-block translate-y-[100%] header_title">
           Front-End Web Developer
         </span>
-      </h1>
-
-      {/* <h1 className="title text-text_primary text-6xl">Hello, I'm MedAgui.</h1>
-      <h2 className="title text-4xl mt-2">Front-End Web Developer</h2> */}
+      </h2>
       <p
-        className="text mt-8 overflow-hidden opacity-0"
+        className="text mt-wide overflow-hidden opacity-0"
         ref={textRef}
         id="hero-text"
       >
@@ -113,17 +103,14 @@ const Hero = () => {
         <span className="title ">beautiful</span>,
         <span className="title"> user-friendly</span> web experiences.
       </p>
-      <div className="container mt-12 flex justify-center items-center overflow-hidden opacity-0">
+      <div className="container mt-widest flex justify-center items-center overflow-hidden opacity-0">
         <LogoCarousel />
       </div>
-      <div className="w-full flex justify-end items-center mt-12">
+      <div className="w-full flex justify-end items-center mt-widest">
         <a href="#projects" className="bounce opacity-0">
           <MagneticButton />
         </a>
       </div>
-      {/* <Blob /> */}
-
-      {/* <AnimatedGradient /> */}
     </section>
   );
 };

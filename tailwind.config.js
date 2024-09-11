@@ -12,8 +12,15 @@ export default {
       colors: {
         black_primary: "#141414",
         white_primary: "#e5f4e3",
-        text_primary: "#d7a3e5",
+        text_primary: "#00bae2",
       },
+      spacing : {
+        widest : '48px',
+        wide : '32px',
+        normal : '24px',
+        thin : '16px',
+        thinner : '8px'
+      }
     },
   },
   plugins: [],
