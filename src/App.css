@@ -38,19 +38,45 @@ body {
 }
 
 @-webkit-keyframes AnimationName {
-    0%{background-position:33% 0%}
-    50%{background-position:68% 100%}
-    100%{background-position:33% 0%}
+    0% {
+        background-position: 33% 0%
+    }
+
+    50% {
+        background-position: 68% 100%
+    }
+
+    100% {
+        background-position: 33% 0%
+    }
 }
+
 @-moz-keyframes AnimationName {
-    0%{background-position:33% 0%}
-    50%{background-position:68% 100%}
-    100%{background-position:33% 0%}
+    0% {
+        background-position: 33% 0%
+    }
+
+    50% {
+        background-position: 68% 100%
+    }
+
+    100% {
+        background-position: 33% 0%
+    }
 }
+
 @keyframes AnimationName {
-    0%{background-position:33% 0%}
-    50%{background-position:68% 100%}
-    100%{background-position:33% 0%}
+    0% {
+        background-position: 33% 0%
+    }
+
+    50% {
+        background-position: 68% 100%
+    }
+
+    100% {
+        background-position: 33% 0%
+    }
 }
 
 
@@ -237,46 +263,10 @@ body {
     from {
         transform: translateX(0);
     }
-
     to {
         transform: translateX(-50%);
     }
 }
-
-.logos-slide svg path {
-    /* fill: yellow; */
-}
-
-
-#blobSvg path {
-    fill: #fff;
-}
-
-.blob {
-    position: relative;
-}
-
-.blob::before {
-    content: 'Selected Works';
-    color: var(--black_primary);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    align-content: center;
-}
-
-.blob:hover svg path,
-.blob::before:hover svg path {
-    fill: red;
-}
-
-#blobSvg:hover path {}
-
 
 .golden {
     aspect-ratio: 0.618;
@@ -292,18 +282,6 @@ body {
 .items-first-baseline {
     align-items: first baseline;
 }
-
-/* .glassy-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    
-} */
-
-
-
 
 .cursor {
     display: none;
@@ -321,12 +299,20 @@ body {
     z-index: 1000;
 }
 
-
-
 .cursor.hovered {
     transform: translate(-50%, -50%) scale(1.2);
 }
 
 .cursor.disabled {
     transform: translate(-50%, -50%) scale(0);
+}
+
+.logo-slider-item svg path {
+    fill : var(--black_primary)
+}
+
+@media (prefers-color-scheme: dark) {
+    .logo-slider-item svg path {
+        fill : var(--white_primary)
+    }
 }
