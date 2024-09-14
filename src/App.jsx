@@ -1,5 +1,4 @@
 import "./App.css";
-import CardStacking from "./assets/sections/CardStacking";
 import {
   Header,
   CustomCursor,
@@ -8,6 +7,7 @@ import {
 } from "./assets/sections/index";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import Stats from "./assets/sections/Stats";
 
 // registering ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -21,10 +21,9 @@ function App() {
       <Hero headerHeight={headerHeight}/>
       <Works />
       <CustomCursor />
+      <Stats />
     </main>
   );
 }
 
 export default App;
-
-// https://codepen.io/snorkltv/pen/GRwqWeo

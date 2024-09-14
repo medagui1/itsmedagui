@@ -1,14 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import Button from "./Button";
-import NavArrow from "./NavArrow";
 import ProjectCardArrow from "./ProjectCardArrow";
-import TagCard from "./TagCard";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import { splitTextIntoSpans } from "../utilities/splitTextIntoSpans";
 
-const ProjectCard = ({ project, index }) => {
+const ProjectCard = ({ project, index, titleHeight }) => {
   const [transformOrigin, setTransformOrigin] = useState("50% 50%");
   const imgContainerRef = useRef(null);
   const imgRef = useRef(null);
@@ -30,10 +27,13 @@ const ProjectCard = ({ project, index }) => {
   };
 
   useGSAP(() => {
+
+    // splitting each project name into different characters so that they are animated separately
     splitTextIntoSpans(projectNameRef, "");
 
     const imageSelector = document.querySelector(`.project-img-${index}`);
 
+    // animating the project image
     gsap.fromTo(
       imageSelector,
       {
@@ -48,11 +48,12 @@ const ProjectCard = ({ project, index }) => {
         scrollTrigger: {
           trigger: imageSelector,
           start: "top bottom",
-          end: "top 70%",
+          end: "top 80%",
         },
       }
     );
 
+    // creating a timeline to animate the project name on scroll
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: `.project-name-${index}`,
@@ -92,20 +93,22 @@ const ProjectCard = ({ project, index }) => {
   }, []);
 
   return (
-    <div
-      className={`sticky bg-black_primary`}
-      style={{ top: `${index * 100 + 72}px` }}
+    <li 
+    className={`sticky z-[30] project_card top-0`}
+    style={{ top : index * 80 + titleHeight }}
     >
-      <hr className="bg-white_primary h-[1px] mt-8" />
-      <div className="flex py-4 flex-wrap">
-        <div className="w-full py-4 pr-4 flex gap-4 items-center">
-          <a className="flex gap-4 items-first-baseline my-2" href="#">
+      <div
+      className={`bg-black_primary`}
+    >
+      <hr className="bg-white_primary h-[1px]" />
+      <div className="flex flex-wrap">
+        <div className="w-full flex gap-4 items-center py-normal">
+          <a className="flex gap-4 items-first-baseline" href="#">
             <h3
               className={`title text-right text-3xl project-name-${index}`}
               ref={projectNameRef}
             >
-              {" "}
-              {project.name}{" "}
+              {project.name}
             </h3>
             <div className={`arrow-container-${index}`}>
               <ProjectCardArrow />
@@ -120,13 +123,14 @@ const ProjectCard = ({ project, index }) => {
           <img
             src={project.image}
             alt=""
-            className={`w-full h-full golden `}
+            className={`golden`}
             style={{ transformOrigin }}
             ref={imgRef}
           />
         </div>
       </div>
     </div>
+    </li>
   );
 };
 
